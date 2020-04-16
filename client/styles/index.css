@@ -1,0 +1,55 @@
+.moda-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.modal-view {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
+  opacity: 0;
+  will-change: transform, opacity;
+
+  transform: scale(1.15);
+  transition: transform 0.1s cubic-bezier(0.465, 0.183, 0.153, 0.946),
+    opacity 0.1s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+}
+
+.modal-view.visible {
+  pointer-events: auto;
+  opacity: 1;
+
+  transform: scale(1);
+
+  transition:
+    transform 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946),
+    opacity 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+}
+
+.modal-view:after {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: block;
+  content: '';
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.modal-view-detail {
+  padding: 100px;
+  font-size: 30px;
+  background-color: white;
+  z-index: 3;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+}
