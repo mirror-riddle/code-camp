@@ -1,7 +1,11 @@
-const modal = document.querySelector('.modal-view');
-modal.addEventListener('click', (event) => {
-  modal.classList.remove(['visible']);
+const modalView = document.querySelector('.modal-view');
+
+const hideModal = document.querySelector('.hide-modal');
+hideModal.addEventListener('click', (event) => {
+  modalView.classList.remove(['visible']);
 }, false);
-setTimeout(() => {
-  modal.classList.add(['visible']);
-}, 1000);
+
+const showModal = document.querySelector('.show-modal');
+showModal.addEventListener('click', (event) => {
+  modalView.classList.add(['visible']);
+}, false);
