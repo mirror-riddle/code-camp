@@ -3,15 +3,24 @@
   <head>
     <meta charset="utf-8" />
     <title>Code Camp</title>
-    <meta name="viewport" content="width=device-idth, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="format-detection" content="telephone=no" />
+    <style>
+      .modal-view {
+        opacity: 0;
+      }
+      .view-detail {
+        transform: translateX(100%);
+      }
+    </style>
     <link rel="stylesheet" href="styles/index.css" />
-    <script defer src="scripts/index.js"></script>
+    <script async type="module" src="scripts/index.js"></script>
   </head>
   <body>
     <header>
       <button class="show-modal">Show Modal</button>
     </header>
+
     <div class="view-container">
       <div class="view view-list flex-container">
         <a class="click-call" href="tel:+86-178-1640-3059">+86 178-1640-3059</a>
@@ -20,12 +29,11 @@
         Detail View
       </div>
     </div>
-    <div class="modal-container">
-      <div class="modal-view">
-        <div class="modal-view-detail">
-          <p class="modal-message">Modal coming ~</p>
-          <button class="hide-modal">Hide Modal</button>
-        </div>
+
+    <div class="modal-view flex-container">
+      <div class="modal-view-detail">
+        <p class="modal-message">Modal coming ~</p>
+        <button class="hide-modal">Hide Modal</button>
       </div>
     </div>
   </body>
