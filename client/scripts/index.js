@@ -30,4 +30,9 @@
   [viewList, viewDetail].map((view) => {
     view.addEventListener('click', onViewChange, false);
   });
+
+  const clickCall = document.querySelector('.click-call');
+  clickCall.addEventListener('click', (event) => {
+    event.stopPropagation();
+  }, true);
 })();
