@@ -18,6 +18,7 @@
   </head>
   <body>
     <header>
+      <button class="toggle-view">Toggle View</button>
       <button class="show-modal">Show Modal</button>
     </header>
 
@@ -26,7 +27,11 @@
         <a class="click-call" href="tel:+86-178-1640-3059">+86 178-1640-3059</a>
       </div>
       <div class="view view-detail flex-container">
-        Detail View
+        <form id="upload-form">
+          <input type="text" name="name" value="hejin" />
+          <input type="file" name="file" />
+          <button type="submit">Submit</button>
+        </form>
       </div>
     </div>
 
