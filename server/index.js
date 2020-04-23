@@ -27,6 +27,17 @@ const server = http.createServer((req, res) => {
     });
     return;
   }
+  if (req.url === '/test') {
+    res.setHeader(
+      'Access-Control-Allow-Origin',
+      'https://developer.mozilla.org'
+    );
+    res.setHeader('Cache-Control', 'public');
+    res.setHeader('Content-Type', 'text/html, charset=utf-8');
+    res.write('<p>test coming~</p>');
+    res.end();
+    return;
+  }
   fileServer.serve(req, res);
 });
 
