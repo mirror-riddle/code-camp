@@ -20,23 +20,29 @@ export const addEventListeners = () => {
   );
 
   const viewContainer = document.querySelector('.view-container');
-  const viewList = document.querySelector('.view-list');
-  const viewDetail = document.querySelector('.view-detail');
+  const toggleView = document.querySelector('.toggle-view');
 
   const onViewChange = (event) => {
     viewContainer.classList.toggle('view-change');
   };
 
-  [viewList, viewDetail].map((view) => {
-    view.addEventListener('click', onViewChange, false);
+  toggleView.addEventListener('click', onViewChange, false);
+
+  const uploadForm = document.querySelector('#upload-form');
+
+  uploadForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    new FormData(uploadForm);
   });
 
-  const clickCall = document.querySelector('.click-call');
-  clickCall.addEventListener(
-    'click',
-    (event) => {
-      event.stopPropagation();
-    },
-    true
-  );
+  uploadForm.addEventListener('formdata', (event) => {
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState === xhr.DONE) {
+        console.log(xhr.response);
+      }
+    };
+    xhr.open('POST', '/upload', true);
+    xhr.send(event.formData);
+  });
 };
