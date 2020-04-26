@@ -13,7 +13,7 @@ export const sendCorsCookies = () => {
         break;
       }
       case xhr.DONE: {
-        console.log(xhr.response);
+        console.log(xhr.responseText);
         break;
       }
       default: {

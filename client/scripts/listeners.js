@@ -45,4 +45,13 @@ export const addEventListeners = () => {
     xhr.open('POST', '/upload', true);
     xhr.send(event.formData);
   });
+
+  const importScript = document.querySelector('.import-script');
+  importScript.addEventListener(
+    'click',
+    (event) => {
+      Promise.resolve('import("/scripts/storage.js")').then(eval);
+    },
+    { once: true }
+  );
 };

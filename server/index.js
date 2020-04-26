@@ -14,7 +14,6 @@ const server = http.createServer((req, res) => {
         .split('; ')
         .map((pair) => pair.split('='))
     );
-    console.log(params);
     res.write('recived');
     res.end();
     return;
@@ -66,9 +65,8 @@ const server1 = http.createServer((req, res) => {
       'Access-Control-Allow-Origin, Access-Control-Allow-Credentials, Authorization'
     );
     res.setHeader('Access-Control-Max-Age', 300);
-    console.log(req.method);
     const url = new URL(req.url, `http://${req.headers.host}`);
-    console.log(res.getHeaders());
+    res.setHeader('Content-Type', 'text/plain');
     res.write('recived');
     res.end();
     return;
